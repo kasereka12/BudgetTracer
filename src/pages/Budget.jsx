@@ -66,6 +66,8 @@ const Budget = () => {
                 if (error) throw error
                 toast.success('Budget mis à jour avec succès')
             } else {
+                console.log("Budget à insérer:", budgetData)
+
                 const { error } = await supabase
                     .from('budgets')
                     .insert([budgetData])
@@ -313,8 +315,8 @@ const Budget = () => {
                                 <button
                                     onClick={() => toggleBudgetStatus(budget)}
                                     className={`px-2 py-1 rounded-full text-xs font-medium ${budget.is_active
-                                            ? 'bg-green-100 text-green-800'
-                                            : 'bg-gray-100 text-gray-800'
+                                        ? 'bg-green-100 text-green-800'
+                                        : 'bg-gray-100 text-gray-800'
                                         }`}
                                 >
                                     {budget.is_active ? 'Actif' : 'Inactif'}

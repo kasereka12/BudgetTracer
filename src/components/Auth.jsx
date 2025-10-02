@@ -32,7 +32,15 @@ const Auth = () => {
                             full_name: fullName,
                         }
                     }
-                })
+                })/*
+                const { error2 } = await supabase
+                    .from('profiles')
+                    .insert([{
+                        id: user.id,
+                        email,
+                        full_name: fullName,
+                    }])
+                if (error) throw error*/
                 if (error) throw error
                 toast.success('Compte créé ! Vérifiez votre email pour confirmer votre inscription.')
             }

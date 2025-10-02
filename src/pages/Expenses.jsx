@@ -57,8 +57,8 @@ const Expenses = () => {
             const { data, error } = await supabase
                 .from('expense_categories')
                 .select('*')
-                .eq('user_id', user.id)
-                .order('name')
+            //.eq('user_id', user.id)
+            //.order('name')
 
             if (error) throw error
             setCategories(data || [])
